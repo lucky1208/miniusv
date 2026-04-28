@@ -48,7 +48,7 @@ export default function SolutionsPage() {
                 </svg>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-900">8-45万</div>
+                <div className="text-2xl font-bold text-slate-900">RMB 80k-450k</div>
                 <div className="text-sm text-slate-500">价格区间</div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function SolutionsPage() {
                         <div className="text-xs text-slate-500">电池容量</div>
                       </div>
                       <div className="bg-slate-50 rounded-lg p-3 text-center">
-                        <div className="text-xl font-bold text-slate-900">{solution.speed}节</div>
+                        <div className="text-2xl font-bold text-slate-900">{solution.speed}kn</div>
                         <div className="text-xs text-slate-500">最高航速</div>
                       </div>
                       <div className="bg-slate-50 rounded-lg p-3 text-center">
@@ -175,7 +175,7 @@ export default function SolutionsPage() {
                           <div key={category.category} className="flex justify-between text-sm">
                             <span className="text-slate-600">{category.category}</span>
                             <span className="text-slate-900 font-medium">
-                              {category.items.length}项
+                              {category.items.length} items
                             </span>
                           </div>
                         ))}

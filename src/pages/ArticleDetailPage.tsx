@@ -21,6 +21,16 @@ export default function ArticleDetailPage() {
   // Convert markdown-like content to HTML
   const renderContent = (content: string) => {
     return content.split('\n').map((line, index) => {
+      // Remove bold markers **...** and convert to span
+      const processBold = (text: string) => {
+        return text.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        });
+      };
+
       if (line.startsWith('# ')) {
         return (
           <h1 key={index} className="text-3xl font-bold text-slate-900 mt-12 mb-6">
@@ -73,11 +83,11 @@ export default function ArticleDetailPage() {
       if (line.trim() === '') {
         return <div key={index} className="h-4"></div>;
       }
-      // Regular paragraph
+      // Regular paragraph with bold text support
       if (line.trim()) {
         return (
           <p key={index} className="text-slate-700 leading-relaxed mb-4">
-            {line}
+            {processBold(line)}
           </p>
         );
       }

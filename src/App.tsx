@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
 import HomePage from './pages/HomePage';
 import SolutionsPage from './pages/SolutionsPage';
 import SolutionDetailPage from './pages/SolutionDetailPage';
@@ -8,6 +9,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 
 function Navigation() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -41,12 +44,65 @@ function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-slate-600">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-600"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-slate-100 py-4">
+            <div className="flex flex-col gap-4">
+              <Link
+                to="/"
+                className="text-slate-600 hover:text-blue-600 font-medium transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                首页
+              </Link>
+              <Link
+                to="/solutions"
+                className="text-slate-600 hover:text-blue-600 font-medium transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                方案库
+              </Link>
+              <Link
+                to="/blog"
+                className="text-slate-600 hover:text-blue-600 font-medium transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                技术洞察
+              </Link>
+              <Link
+                to="/about"
+                className="text-slate-600 hover:text-blue-600 font-medium transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                关于我们
+              </Link>
+              <Link
+                to="/contact"
+                className="px-5 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                立即咨询
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

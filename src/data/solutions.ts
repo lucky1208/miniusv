@@ -38,7 +38,7 @@ export const solutions: Solution[] = [
     speed: 30,
     range: 50,
     application: '近海巡逻/目标拦截',
-    price: '8-12万',
+    price: 'RMB 80k-120k',
     features: [
       '双喷水推进，高机动转向',
       'AI智能感知（激光+毫米波+光电）',
@@ -96,7 +96,7 @@ export const solutions: Solution[] = [
     speed: 25,
     range: 100,
     application: '海上作业/巡逻监测',
-    price: '15-20万',
+    price: 'RMB 150k-200k',
     features: [
       '100kWh大容量电池包',
       '增强型感知系统',
@@ -153,7 +153,7 @@ export const solutions: Solution[] = [
     speed: 20,
     range: 150,
     application: '海洋测绘/水文调查',
-    price: '30-45万',
+    price: 'RMB 300k-450k',
     features: [
       '150kWh超大容量电池',
       '专业测量载荷预留',

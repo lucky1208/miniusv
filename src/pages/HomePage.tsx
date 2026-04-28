@@ -95,7 +95,7 @@ export default function HomePage() {
                     <div className="text-sm text-slate-300">续航里程</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-cyan-400">20节</div>
+                    <div className="text-2xl font-bold text-cyan-400">20kn</div>
                     <div className="text-sm text-slate-300">最高航速</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">

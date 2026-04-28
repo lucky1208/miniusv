@@ -25,7 +25,7 @@ export default function SolutionDetailPage() {
               <div className="text-sm text-slate-300">电池容量</div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-3xl font-bold">20节</div>
+              <div className="text-3xl font-bold">20kn</div>
               <div className="text-sm text-slate-300">最高航速</div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
@@ -215,7 +215,7 @@ export default function SolutionDetailPage() {
                   <li>系统标称电压：201.6V</li>
                   <li>系统总能量：59.85 kWh</li>
                   <li>电池净重：约396.77 kg</li>
-                  <li className="text-green-600 font-medium">价格（按照0.5元/Wh）：约3万元</li>
+                  <li className="text-green-600 font-medium">价格（按照0.5元/Wh）：RMB 30k</li>
                 </ul>
               </div>
 
@@ -270,21 +270,21 @@ export default function SolutionDetailPage() {
               <h2 className="text-2xl font-bold mb-6">成本估算总计</h2>
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-white/20 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold">约3万</div>
+                  <div className="text-3xl font-bold">RMB 30k</div>
                   <div className="text-sm text-blue-100">高压电池包</div>
                 </div>
                 <div className="bg-white/20 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold">约3-5千</div>
+                  <div className="text-3xl font-bold">RMB 3k-5k</div>
                   <div className="text-sm text-blue-100">玻璃钢壳体</div>
                 </div>
                 <div className="bg-white/20 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold">约2万</div>
+                  <div className="text-3xl font-bold">RMB 20k</div>
                   <div className="text-sm text-blue-100">通信与传感器</div>
                 </div>
               </div>
               <div className="text-center">
                 <p className="text-lg text-blue-100 mb-2">核心BOM总成本（不含壳体）</p>
-                <p className="text-5xl font-bold">约5-6万</p>
+                <p className="text-5xl font-bold">RMB 50k-60k</p>
               </div>
             </div>
 
