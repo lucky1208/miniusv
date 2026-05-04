@@ -48,7 +48,7 @@ export default function SolutionsPage() {
                 </svg>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-900">RMB 80k-450k</div>
+                <div className="text-2xl font-bold text-slate-900">RMB 3W-15W</div>
                 <div className="text-sm text-slate-500">价格区间</div>
               </div>
             </div>
@@ -107,13 +107,15 @@ export default function SolutionsPage() {
               >
                 <div className="grid md:grid-cols-5">
                   {/* Visual */}
-                  <div className="md:col-span-2 bg-gradient-to-br from-blue-600 to-cyan-600 p-8 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="text-6xl font-bold mb-2">{solution.boatLength}</div>
-                      <div className="text-lg opacity-80">米级{index === 0 ? '突击' : index === 1 ? '作业' : '测量'}艇</div>
-                      <div className="mt-4 text-sm opacity-70">
-                        {solution.application}
-                      </div>
+                  <div className="md:col-span-2 relative overflow-hidden">
+                    <img
+                      src={index === 0 ? '/mini USV-new.png' : index === 1 ? '/3m.jpg' : index === 2 ? '/5m.png' : '/8m.png'}
+                      alt={`${solution.boatLength}米级${index === 0 ? '突击' : index === 1 ? '作业' : '测量'}艇`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6">
+                      <div className="text-6xl font-bold text-white mb-2">{solution.boatLength}</div>
+                      <div className="text-lg text-white/80">{solution.application}</div>
                     </div>
                   </div>
 
@@ -127,7 +129,7 @@ export default function SolutionsPage() {
                         <p className="text-slate-600">{solution.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-blue-600">{solution.price}</div>
+                        <div className="text-xl font-bold text-blue-600">{solution.price}</div>
                         <div className="text-sm text-slate-500">预估成本</div>
                       </div>
                     </div>
@@ -139,7 +141,7 @@ export default function SolutionsPage() {
                         <div className="text-xs text-slate-500">电池容量</div>
                       </div>
                       <div className="bg-slate-50 rounded-lg p-3 text-center">
-                        <div className="text-2xl font-bold text-slate-900">{solution.speed}kn</div>
+                        <div className="text-2xl font-bold text-slate-900">{solution.speed}km/h</div>
                         <div className="text-xs text-slate-500">最高航速</div>
                       </div>
                       <div className="bg-slate-50 rounded-lg p-3 text-center">

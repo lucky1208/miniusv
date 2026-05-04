@@ -18,7 +18,7 @@ function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="XUSV" className="w-10 h-10 object-contain rounded-lg" />
-            <span className="font-bold text-xl text-slate-900">XUSV油改电网</span>
+            <span className="font-bold text-xl text-slate-900">XUSV油改电AI艇</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -116,7 +116,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src="/logo.png" alt="XUSV" className="w-10 h-10 object-contain rounded-lg" />
-              <span className="font-bold text-xl">XUSV油改电网</span>
+              <span className="font-bold text-xl">XUSV油改电AI艇</span>
             </div>
             <p className="text-slate-400 text-sm">
               国内领先XUSV油改电配套方案平台，让每一艘船都能智能电动化。
@@ -154,7 +154,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
-          <p>&copy; 2025 XUSV油改电网. All rights reserved.</p>
+          <p>&copy; 2025 XUSV油改电. All rights reserved.</p>
         </div>
       </div>
     </footer>

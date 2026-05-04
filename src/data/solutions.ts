@@ -29,6 +29,62 @@ export interface BOMItem {
 
 export const solutions: Solution[] = [
   {
+    id: 'usv-mini',
+    name: 'XUSV Mini 小型无人水面艇',
+    boatType: '小型快艇/作业艇',
+    boatLength: 1.5,
+    batteryCapacity: 15,
+    voltage: 48,
+    speed: 20,
+    range: 100,
+    application: '近海巡逻/环境监测/水域搜救',
+    price: '3W-5W',
+    features: [
+      'AI智能感知（激光+毫米波+光电）',
+      '模块化快速换电（3分钟）',
+      '低功耗设计',
+      '远程监控与控制',
+      '轻量化船体',
+      '高机动性'
+    ],
+    description: 'XUSV Mini是一款专为近海巡逻、环境监测、水域搜救等场景设计的小型化无人水面艇。采用模块化设计，支持快速部署和换电，极大提升作业效率。',
+    bom: [
+      {
+        category: 'AI主控与计算',
+        items: [
+          { name: 'AI主控', model: 'Jetson Orin NX 8GB', quantity: 1, unit: '套', price: 2500, function: '核心算法运行平台，视觉感知' },
+          { name: '工控板', model: '小型工业载板', quantity: 1, unit: '块', price: 800, function: '负责底层控制' }
+        ]
+      },
+      {
+        category: '动力与能源系统',
+        items: [
+          { name: '高压电池包', model: '15S1P (100Ah/3.2V)', quantity: 1, unit: '套', price: 8000, function: '系统电压48V，总能量15kWh' },
+          { name: 'BMS', model: '小型电池管理系统', quantity: 1, unit: '套', price: 800, function: '实时监控与保护' },
+          { name: 'DC/DC转换器', model: 'Vicor模块', quantity: 1, unit: '个', price: 500, function: '电压转换' },
+          { name: 'ESC控制器', model: '无刷电机控制器', quantity: 1, unit: '个', price: 600, function: '控制电机转速' },
+          { name: '驱动电机', model: '5kW BLDC 永磁同步电机', quantity: 1, unit: '个', price: 1000, function: '高效推进' },
+          { name: '喷水推进器', model: '小型Marine Jet', quantity: 1, unit: '套', price: 800, function: '浅水适应' }
+        ]
+      },
+      {
+        category: '通信与传感器',
+        items: [
+          { name: '4G/5G路由器', model: '小型工业路由器', quantity: 1, unit: '个', price: 500, function: '数据回传' },
+          { name: 'GPS定位', model: '单模定位模块', quantity: 1, unit: '套', price: 300, function: '基础定位' },
+          { name: '超声波传感器', model: '超声波测距模块', quantity: 4, unit: '个', price: 200, function: '近距离避障' },
+          { name: '摄像头', model: '广角摄像头', quantity: 2, unit: '个', price: 600, function: '视觉感知' }
+        ]
+      },
+      {
+        category: '船体与结构',
+        items: [
+          { name: '玻璃钢船体', model: 'FRP轻量化结构', quantity: 1, unit: '套', price: 2000, function: '轻便耐用船体' }
+        ]
+      }
+    ]
+  },
+  {
     id: 'usv-3m-patrol',
     name: '3米突击艇智能USV方案',
     boatType: '突击艇/冲锋艇',
@@ -38,7 +94,7 @@ export const solutions: Solution[] = [
     speed: 30,
     range: 50,
     application: '近海巡逻/目标拦截',
-    price: 'RMB 80k-120k',
+    price: '5W-8W',
     features: [
       '双喷水推进，高机动转向',
       'AI智能感知（激光+毫米波+光电）',
@@ -96,7 +152,7 @@ export const solutions: Solution[] = [
     speed: 25,
     range: 100,
     application: '海上作业/巡逻监测',
-    price: 'RMB 150k-200k',
+    price: '8W-10W',
     features: [
       '100kWh大容量电池包',
       '增强型感知系统',
@@ -153,7 +209,7 @@ export const solutions: Solution[] = [
     speed: 20,
     range: 150,
     application: '海洋测绘/水文调查',
-    price: 'RMB 300k-450k',
+    price: '10W-15W',
     features: [
       '150kWh超大容量电池',
       '专业测量载荷预留',
@@ -216,6 +272,6 @@ export const applications = [
   { value: 'monitor', label: '环境监测', icon: 'activity' },
   { value: 'survey', label: '海洋测绘', icon: 'map' },
   { value: 'rescue', label: '海上救援', icon: 'life-buoy' },
-  { value: 'military', label: '军事应用', icon: 'crosshair' },
+  { value: 'military', label: '科技搭载', icon: 'crosshair' },
   { value: 'fishing', label: '渔业作业', icon: 'anchor' }
 ];
