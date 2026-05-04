@@ -44,19 +44,21 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">核心团队</h2>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
 
-            {/* 卢继雄 - Simplified */}
+            {/* 卢继雄 - With Photo */}
             <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-3xl font-bold text-white">
-                  卢
-                </div>
+                <img
+                  src="/lu.jpg"
+                  alt="卢继雄"
+                  className="w-20 h-20 rounded-full object-cover border-2 border-blue-500"
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900">卢继雄</h3>
                   <p className="text-blue-600">创始人 / CEO</p>
                 </div>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                18年+系统产品软硬件研发和项目管理经验，深谙AI、机器人、储能充电、云计算等领域产品，精通软硬件，从架构设计到批量量产的全生命周期流程。拥有8项发明专利，曾主导多个亿元级项目落地。
+                十几年系统产品软硬件研发和项目管理经验，深谙AI、机器人、储能充电、云计算等领域产品，精通软硬件，从架构设计到批量量产的全生命周期流程。拥有8项发明专利，曾主导多个亿元级项目落地。
               </p>
             </div>
 
@@ -73,18 +75,7 @@ export default function AboutPage() {
                   <p className="text-blue-600">联合创始人</p>
                 </div>
               </div>
-              <div className="space-y-3">
-                <div>
-                  <h4 className="text-sm font-semibold text-slate-700 mb-1">学术背景</h4>
-                  <p className="text-slate-600 text-sm">中科院背景，具备扎实的科研能力和学术资源</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-slate-700 mb-1">核心能力</h4>
-                  <p className="text-slate-600 text-sm">
-                    专注于AI算法和商业运营，负责技术落地与市场拓展，曾主导完成亿元级别ToC产品市场销售ToB端产品商业化
-                  </p>
-                </div>
-              </div>
+              <p className="text-slate-600 text-sm">中科院背景，具备扎实的科研能力和学术资源，专注于AI算法和商业运营，负责技术落地与市场拓展，曾主导完成亿元级别ToC产品市场销售ToB端产品商业化</p>
             </div>
           </div>
         </div>

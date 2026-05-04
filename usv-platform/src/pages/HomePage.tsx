@@ -31,7 +31,7 @@ export default function HomePage() {
 
             {/* 副标题 */}
             <p className="text-xl md:text-2xl text-cyan-300 mb-8">
-              国内首个AI无人艇开源平台，让每一片水域都拥有智慧之眼
+              国内领先AI无人艇开源平台，让每一片水域都拥有智慧之眼
             </p>
 
             {/* 描述文字 */}
@@ -262,7 +262,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">18年硬核经验</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">16年硬核经验</h3>
               <p className="text-slate-600">
                 从芯片级到系统级，从硬件到软件，覆盖AI、机器人、储能、充电全栈技术能力
               </p>
@@ -296,7 +296,7 @@ export default function HomePage() {
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
-              <div className="text-3xl md:text-4xl font-bold mb-2">18+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">16+</div>
               <div className="text-blue-100">年研发经验</div>
             </div>
             <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
@@ -309,13 +309,13 @@ export default function HomePage() {
             </div>
             <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
               <div className="text-3xl md:text-4xl font-bold mb-2">95%+</div>
-              <div className="text-blue-100">AI识别率</div>
+              <div className="text-blue-100">AI识别物体准确度</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* XUSV Team Image */}
+      {/* Organization Chart */}
       <section className="py-20 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -323,11 +323,25 @@ export default function HomePage() {
             <p className="text-slate-400">来自中科院、国轩高科、欧科微等产业链知名企业</p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <img
-              src="/xusv-team.jpg"
-              alt="XUSV 核心团队"
-              className="w-full rounded-2xl shadow-2xl"
-            />
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8">
+              
+              {/* Team Members Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { title: '架构师', desc: '系统架构设计', color: 'from-purple-500 to-purple-600' },
+                  { title: '电气专家', desc: '高压电气系统', color: 'from-orange-500 to-orange-600' },
+                  { title: '结构工程师', desc: '船体结构设计', color: 'from-green-500 to-green-600' },
+                  { title: '软件资深师', desc: '控制系统开发', color: 'from-blue-500 to-blue-600' },
+                  { title: 'AI工程师', desc: '智能算法研究', color: 'from-cyan-500 to-cyan-600' },
+                  { title: '市场专员', desc: '商务拓展合作', color: 'from-pink-500 to-pink-600' }
+                ].map((role, idx) => (
+                  <div key={idx} className={`bg-gradient-to-r ${role.color} rounded-xl p-4 text-center`}>
+                    <div className="text-white font-bold text-lg mb-1">{role.title}</div>
+                    <div className="text-white/80 text-sm">{role.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

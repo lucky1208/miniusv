@@ -38,7 +38,7 @@ export const solutions: Solution[] = [
     speed: 20,
     range: 100,
     application: '近海巡逻/环境监测/水域搜救',
-    price: 'RMB 30k-50k',
+    price: '3W-5W',
     features: [
       'AI智能感知（激光+毫米波+光电）',
       '模块化快速换电（3分钟）',
@@ -94,7 +94,7 @@ export const solutions: Solution[] = [
     speed: 30,
     range: 50,
     application: '近海巡逻/目标拦截',
-    price: 'RMB 80k-120k',
+    price: '5W-8W',
     features: [
       '双喷水推进，高机动转向',
       'AI智能感知（激光+毫米波+光电）',
@@ -152,7 +152,7 @@ export const solutions: Solution[] = [
     speed: 25,
     range: 100,
     application: '海上作业/巡逻监测',
-    price: 'RMB 150k-200k',
+    price: '8W-10W',
     features: [
       '100kWh大容量电池包',
       '增强型感知系统',
@@ -209,7 +209,7 @@ export const solutions: Solution[] = [
     speed: 20,
     range: 150,
     application: '海洋测绘/水文调查',
-    price: 'RMB 300k-450k',
+    price: '10W-15W',
     features: [
       '150kWh超大容量电池',
       '专业测量载荷预留',
@@ -272,6 +272,6 @@ export const applications = [
   { value: 'monitor', label: '环境监测', icon: 'activity' },
   { value: 'survey', label: '海洋测绘', icon: 'map' },
   { value: 'rescue', label: '海上救援', icon: 'life-buoy' },
-  { value: 'military', label: '军事应用', icon: 'crosshair' },
+  { value: 'military', label: '科技搭载', icon: 'crosshair' },
   { value: 'fishing', label: '渔业作业', icon: 'anchor' }
 ];

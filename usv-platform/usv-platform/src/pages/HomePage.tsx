@@ -8,36 +8,53 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-blue-900/50 to-slate-900/50"></div>
+      {/* Hero Section - 整体下移，参考home.png设计 */}
+      <section className="relative bg-gradient-to-b from-blue-950 via-blue-900 to-slate-900 text-white py-20 overflow-hidden">
+        {/* 顶部背景装饰 */}
+        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-slate-900 to-transparent"></div>
+
+        {/* 中心光效 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-400/10 rounded-full blur-2xl"></div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-8">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              <span className="text-sm text-blue-200">国内领先XUSV油改电配套方案平台</span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              让每一艘船都能
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"> 智能电动化 </span>
+            {/* 主标题 */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                X.USV
+              </span>
+              <span className="text-white">——智绘深蓝，开源领航</span>
             </h1>
 
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-              基于18年硬件+AI研发经验，提供从方案设计到落地实施的全栈式XUSV油改电解决方案
+            {/* 副标题 */}
+            <p className="text-xl md:text-2xl text-cyan-300 mb-8">
+              国内领先AI无人艇开源平台，让每一片水域都拥有智慧之眼
             </p>
 
+            {/* 描述文字 */}
+            <p className="text-base md:text-lg text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed">
+              不必再仰望昂贵的海洋装备——X.USV，将自主决策、环境感知与集群协同能力，装入一艘艘可定制、可复制的AI无人艇。从水文监测到应急救援，从渔业巡护到科研采样，开源架构让你自由调用核心算法、船控系统与仿真环境。
+            </p>
+
+            <p className="text-lg md:text-xl text-white font-semibold mb-8">
+              代码、数据、解决方案，全部开放共享
+            </p>
+
+            
+            {/* 按钮组 */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/solutions"
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all"
               >
                 查看方案库 →
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 bg-white/10 border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-all"
+                className="px-8 py-4 bg-white/10 border-2 border-white/30 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all"
               >
                 获取定制方案
               </Link>
@@ -45,7 +62,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 3D Wave Animation */}
+        {/* 底部波浪效果 */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent"></div>
       </section>
 
@@ -67,7 +84,7 @@ export default function HomePage() {
               {/* Product Image */}
               <div className="relative">
                 <img
-                  src="/xusv-mini-showcase.png"
+                  src="/open XUSV.png"
                   alt="XUSV Mini 无人水面艇"
                   className="w-full rounded-2xl shadow-2xl"
                 />
@@ -95,7 +112,7 @@ export default function HomePage() {
                     <div className="text-sm text-slate-300">续航里程</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-cyan-400">20节</div>
+                    <div className="text-2xl font-bold text-cyan-400">20km/h</div>
                     <div className="text-sm text-slate-300">最高航速</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
@@ -166,7 +183,7 @@ export default function HomePage() {
                       {solution.batteryCapacity}kWh电池
                     </span>
                     <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
-                      {solution.speed}节航速
+                      {solution.speed}km/h航速
                     </span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
                       {solution.range}km续航
@@ -181,30 +198,6 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">18+</div>
-              <div className="text-blue-100">年研发经验</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">8</div>
-              <div className="text-blue-100">项发明专利</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">3200+</div>
-              <div className="text-blue-100">产品量产经验</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">95%+</div>
-              <div className="text-blue-100">AI识别率</div>
-            </div>
           </div>
         </div>
       </section>
@@ -269,7 +262,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">18年硬核经验</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">16年硬核经验</h3>
               <p className="text-slate-600">
                 从芯片级到系统级，从硬件到软件，覆盖AI、机器人、储能、充电全栈技术能力
               </p>
@@ -299,10 +292,30 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
+          {/* Stats Section */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
+              <div className="text-3xl md:text-4xl font-bold mb-2">16+</div>
+              <div className="text-blue-100">年研发经验</div>
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
+              <div className="text-3xl md:text-4xl font-bold mb-2">8</div>
+              <div className="text-blue-100">项发明专利</div>
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
+              <div className="text-3xl md:text-4xl font-bold mb-2">3200+</div>
+              <div className="text-blue-100">产品量产经验</div>
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl p-6">
+              <div className="text-3xl md:text-4xl font-bold mb-2">95%+</div>
+              <div className="text-blue-100">AI识别物体准确度</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* XUSV Team Image */}
+      {/* Organization Chart */}
       <section className="py-20 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -310,11 +323,25 @@ export default function HomePage() {
             <p className="text-slate-400">来自中科院、国轩高科、欧科微等产业链知名企业</p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <img
-              src="/xusv-team.jpg"
-              alt="XUSV 核心团队"
-              className="w-full rounded-2xl shadow-2xl"
-            />
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8">
+              
+              {/* Team Members Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { title: '架构师', desc: '系统架构设计', color: 'from-purple-500 to-purple-600' },
+                  { title: '电气专家', desc: '高压电气系统', color: 'from-orange-500 to-orange-600' },
+                  { title: '结构工程师', desc: '船体结构设计', color: 'from-green-500 to-green-600' },
+                  { title: '软件资深师', desc: '控制系统开发', color: 'from-blue-500 to-blue-600' },
+                  { title: 'AI工程师', desc: '智能算法研究', color: 'from-cyan-500 to-cyan-600' },
+                  { title: '市场专员', desc: '商务拓展合作', color: 'from-pink-500 to-pink-600' }
+                ].map((role, idx) => (
+                  <div key={idx} className={`bg-gradient-to-r ${role.color} rounded-xl p-4 text-center`}>
+                    <div className="text-white font-bold text-lg mb-1">{role.title}</div>
+                    <div className="text-white/80 text-sm">{role.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

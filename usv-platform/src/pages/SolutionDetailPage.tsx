@@ -27,10 +27,10 @@ export default function SolutionDetailPage() {
   const getCostBreakdown = (sol: Solution) => {
     if (sol.id === 'usv-mini') {
       return {
-        battery: 'RMB 8k',
-        hull: 'RMB 2k',
-        sensors: 'RMB 4k',
-        total: 'RMB 15k-20k',
+        battery: '0.8W',
+        hull: '0.2W',
+        sensors: '0.4W',
+        total: '1.5W-2W',
         batteryConfig: '15S1P (100Ah/3.2V)',
         batteryVoltage: '48V',
         batteryEnergy: '15 kWh',
@@ -38,10 +38,10 @@ export default function SolutionDetailPage() {
       };
     } else if (sol.id === 'usv-3m-patrol') {
       return {
-        battery: 'RMB 30k',
-        hull: 'RMB 3k-5k',
-        sensors: 'RMB 20k',
-        total: 'RMB 50k-60k',
+        battery: '3W',
+        hull: '0.4W',
+        sensors: '2W',
+        total: '5W-6W',
         batteryConfig: '63S1P (300Ah/3.2V)',
         batteryVoltage: '201.6V',
         batteryEnergy: '59.85 kWh',
@@ -49,10 +49,10 @@ export default function SolutionDetailPage() {
       };
     } else if (sol.id === 'usv-5m-work') {
       return {
-        battery: 'RMB 50k',
-        hull: 'RMB 5k-8k',
-        sensors: 'RMB 40k',
-        total: 'RMB 100k-120k',
+        battery: '5W',
+        hull: '0.8W',
+        sensors: '4W',
+        total: '10W-12W',
         batteryConfig: '108S1P (300Ah/3.2V)',
         batteryVoltage: '345.6V',
         batteryEnergy: '103.68 kWh',
@@ -60,10 +60,10 @@ export default function SolutionDetailPage() {
       };
     } else if (sol.id === 'usv-8m-survey') {
       return {
-        battery: 'RMB 80k',
-        hull: 'RMB 10k-15k',
-        sensors: 'RMB 80k',
-        total: 'RMB 180k-200k',
+        battery: '8W',
+        hull: '1.5W',
+        sensors: '8W',
+        total: '18W-20W',
         batteryConfig: '126S2P (280Ah/3.2V)',
         batteryVoltage: '403.2V',
         batteryEnergy: '225.8 kWh',
@@ -71,10 +71,10 @@ export default function SolutionDetailPage() {
       };
     }
     return {
-      battery: 'RMB 30k',
-      hull: 'RMB 3k-5k',
-      sensors: 'RMB 20k',
-      total: 'RMB 50k-60k',
+      battery: '3W',
+      hull: '0.4W',
+      sensors: '2W',
+      total: '5W-6W',
       batteryConfig: '63S1P (300Ah/3.2V)',
       batteryVoltage: '201.6V',
       batteryEnergy: '59.85 kWh',
@@ -109,7 +109,7 @@ export default function SolutionDetailPage() {
     if (sol.id === 'usv-3m-patrol') {
       return {
         mediaType: 'single-image',
-        images: ['/3m.jpg'],
+        images: ['/3mgz.png'],
         labels: ['3米突击艇'],
         video: null
       };
@@ -131,7 +131,7 @@ export default function SolutionDetailPage() {
     // Default for usv-mini
     return {
       mediaType: 'images',
-      images: ['/xusv-fenjie.png', '/xusv-toushi.png'],
+      images: ['/xusv-fenjie.png', '/mini USV-new.png'],
       labels: ['爆炸分解图', '透视装机图'],
       video: null
     };
@@ -141,7 +141,7 @@ export default function SolutionDetailPage() {
 
   // Get tab title based on solution
   const getTabTitle = (sol: Solution) => {
-    if (sol.id === 'usv-3m-patrol') return '结构解析';
+    if (sol.id === 'usv-3m-patrol') return '预安装图';
     if (sol.id === 'usv-5m-work') return '样船改造成品';
     if (sol.id === 'usv-8m-survey') return '结构解析';
     return '结构解析';
@@ -224,12 +224,12 @@ export default function SolutionDetailPage() {
                 // Single image display for 3米突击艇 and 8米测量艇
                 <div>
                   {solution.id === 'usv-3m-patrol' ? (
-                    // For 3米突击艇: Show XUSV透视装机图 with exploded view removed
+                    // For 3米突击艇: Show 3mgz.png with exploded view removed
                     <div>
                       <h3 className="text-lg font-semibold text-slate-800 mb-4">透视装机图</h3>
                       <img
-                        src="/xusv-toushi.png"
-                        alt="XUSV透视装机图"
+                        src="/3mgz.png"
+                        alt="3米突击艇透视装机图"
                         className="w-full rounded-xl shadow-lg"
                       />
                       <p className="text-sm text-slate-500 mt-3">展示内部电气连接与元器件布局的实际装机效果</p>

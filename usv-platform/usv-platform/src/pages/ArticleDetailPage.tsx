@@ -21,6 +21,16 @@ export default function ArticleDetailPage() {
   // Convert markdown-like content to HTML
   const renderContent = (content: string) => {
     return content.split('\n').map((line, index) => {
+      // Remove bold markers **...** and convert to span
+      const processBold = (text: string) => {
+        return text.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        });
+      };
+
       if (line.startsWith('# ')) {
         return (
           <h1 key={index} className="text-3xl font-bold text-slate-900 mt-12 mb-6">
@@ -50,10 +60,13 @@ export default function ArticleDetailPage() {
         );
       }
       if (line.startsWith('| ')) {
-        // Simple table parsing
+        // Simple table parsing - skip separator lines
+        if (line.includes('---') || line.includes('---')) {
+          return null;
+        }
         const cells = line.split('|').filter(cell => cell.trim());
         return (
-          <div key={index} className="grid grid-cols- gap-4 py-2 border-b border-slate-100">
+          <div key={index} className="flex flex-wrap gap-4 py-2 border-b border-slate-100 text-sm">
             {cells.map((cell, i) => (
               <span key={i} className="text-slate-700">{cell.trim()}</span>
             ))}
@@ -73,11 +86,11 @@ export default function ArticleDetailPage() {
       if (line.trim() === '') {
         return <div key={index} className="h-4"></div>;
       }
-      // Regular paragraph
+      // Regular paragraph with bold text support
       if (line.trim()) {
         return (
           <p key={index} className="text-slate-700 leading-relaxed mb-4">
-            {line}
+            {processBold(line)}
           </p>
         );
       }
@@ -151,7 +164,7 @@ export default function ArticleDetailPage() {
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">卢继雄</h3>
                 <p className="text-slate-600 mb-3">
-                  18年硬件+AI研发经验，专注USV油改电方案设计。曾主导3200+台移动储能充电机器人全球量产。
+                  16年硬件+AI研发经验，专注USV油改电方案设计。曾主导3200+台移动储能充电机器人全球量产。
                 </p>
                 <div className="flex gap-3">
                   <Link

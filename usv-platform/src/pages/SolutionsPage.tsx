@@ -48,7 +48,7 @@ export default function SolutionsPage() {
                 </svg>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-900">RMB 80k-450k</div>
+                <div className="text-2xl font-bold text-slate-900">RMB 3W-15W</div>
                 <div className="text-sm text-slate-500">价格区间</div>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function SolutionsPage() {
                         <p className="text-slate-600">{solution.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-blue-600">{solution.price}</div>
+                        <div className="text-xl font-bold text-blue-600">{solution.price}</div>
                         <div className="text-sm text-slate-500">预估成本</div>
                       </div>
                     </div>
